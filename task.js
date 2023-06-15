@@ -77,20 +77,17 @@ const calculateTotal = (products) => {
 
   for (let i = 0; i < products.length; i++) {
     totalCost += products[i].price * products[i].qty;
+    if (maxNum < products[i].price) {
+      maxNum = products[i].price;
+    }
   }
+  console.log("max num: ", maxNum);
 
   if (totalCost === 0) {
     console.log(" Array is empty");
   } else {
     console.log(`This is a total cost ${totalCost}`);
   }
-
-  for (let j = 0; j < products.length; j++) {
-    if (maxNum < products[j].price) {
-      maxNum = products[j].price;
-    }
-  }
-  console.log("max num: ", maxNum);
 };
 
 const listOfProducts = [
